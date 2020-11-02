@@ -19,12 +19,11 @@ var rowBlock = document.querySelector(".time-block")
 saveTaskButton.addEventListener("click", function (event) {
   event.preventDefault();
 
-  
-console.log(event.target.getAttribute("data"));
+var nine= document.getElementById("nine");
+nine.value.trim();
+localStorage.setItem("task", JSON.stringify(""));
 
-localStorage.setItem("task", JSON.stringify(event.target.getAttribute("data")));
-
-  renderTasks();
+renderTasks();
 
 });
 

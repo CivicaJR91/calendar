@@ -4,37 +4,36 @@ var date = document.getElementById("currentDay");
 date.innerHTML = moment().format('MMMM Do, YYYY');
 
 
-// Rendering the calendar
-var calContainer = document.getElementById("myworkdaycalendar");
 var hours = moment().format('h:mm a');
 var time = document.getElementById("daytime");
 var dailyTask = document.getElementById("task");
 var saveTaskButton = document.getElementById("savebutton");
+var rowBlock = document.querySelector(".time-block")
 
 var workTime= ["9:00 AM","10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM", "6:00 PM"];
 
 
 //LocalStorage
-
-var storedInput = JSON.parse (localStorage.getItem ("task"));
-
+// Store Tasks
 function storeTask () {
-    localStorage.setItem("task", JSON.stringify(dailyTask));
+  localStorage.setItem("task", JSON.stringify(dailyTask));
 
 }
 
-saveTaskButton.addEventListener("click", function(event) {
+// adding eventlistener to the block that holds the time, text, and save button
+rowBlock.addEventListener("click", function(event) {
 event.preventDefault();
 
-var inputTask = dailyTask.value.trim();
+dailyTask.value.trim();
 
-if (inputTask ==="") {
-  return;
+storeTask();
+renderTasks();
+});
+
+// 
+function renderTasks (){
+
+JSON.parse (localStorage.getItem ("task"));
 }
 
-
-dailyTask.value="";
-storeTask();
-
-});
 

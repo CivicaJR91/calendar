@@ -4,12 +4,8 @@ var date = document.getElementById("currentDay");
 date.innerHTML = moment().format('MMMM Do, YYYY');
 
 
-var hours = moment().format('h');
+var hours = moment().format('H');
 console.log(hours);
-var time = document.querySelector(".daytime");
-var dailyTask = document.querySelector(".task");
-var saveTaskButton = document.querySelector(".savebutton");
-var rowBlock = document.querySelector(".time-block")
 
 
 // 9 AM Stored Input - Render Input Stored
@@ -18,7 +14,7 @@ var nineText = document.getElementById("ninetext");
 var ninehour = document.getElementById("ninehour");
 
 renderNineTask();
-
+nineHourColors();
 
 ninebutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -35,7 +31,7 @@ function renderNineTask() {
 }
 
 
-nineHourColors();
+
 function nineHourColors() {
 
   if (hours == 9) {
@@ -47,7 +43,7 @@ function nineHourColors() {
   }
   
   else {
-    $("ninetext").addClass("past");
+    $("#ninetext").addClass("past");
   }
 
 }
@@ -78,13 +74,13 @@ function tenHourColors() {
   if (hours == 10 ) {
     $("#tentext").addClass("present");
   }
-  else if (hours > 10) {
-  $("#tentext").removeClass("present future")
-  $("#tentext").addClass("past");
+  else if (hours < 10) {
+  $("#tentext").addClass("future")
+
   }
   
   else {
-  $("tentext").addClass("future");
+  $("#tentext").addClass("past");
   }
 
 }
@@ -119,13 +115,13 @@ $("#eleventext").addClass("present");
 }
 
 else if (hours < 11) {
-//$("#eleventext").removeClass("present future")
+
 $("#eleventext").addClass("future");
 
 }
   
 else {
-$("eleventext").addClass("past");
+$("#eleventext").addClass("past");
 }
 
 }
@@ -136,6 +132,7 @@ var twelveText = document.getElementById("twelvetext");
 var twelveHour = document.getElementById("twelvehour");
 
 renderTwelveTask();
+tweleveHourColors();
 
 twelvebutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -150,6 +147,25 @@ function renderTwelveTask() {
 
 }
 
+
+function tweleveHourColors() {
+
+  if (hours == 12) {
+  $("#twelvetext").addClass("present");
+  }
+  
+  else if (hours < 12) {
+  
+  $("#twelvetext").addClass("future");
+  
+  }
+    
+  else {
+  $("#twelvetext").addClass("past");
+  }
+  
+  }
+
 // 1 PM Stored Input - Render Input Stored
 
 var onebutton = document.getElementById("onebutton");
@@ -157,6 +173,7 @@ var oneText = document.getElementById("onetext");
 var oneHour = document.getElementById("onehour");
 
 renderOneTask();
+oneHourColors();
 
 onebutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -170,6 +187,25 @@ function renderOneTask() {
   oneText.innerText = localStorage.getItem("onetask");
 }
 
+function oneHourColors() {
+
+  if (hours == 13) {
+  $("#onetext").addClass("present");
+  }
+  
+  else if (hours < 13) {
+
+  $("#onetext").addClass("future");
+  
+  }
+    
+  else {
+  $("#onetext").addClass("past");
+  }
+  
+  }
+
+
 // 2 PM Stored Input - Render Input Stored
 
 var twobutton = document.getElementById("twobutton");
@@ -177,6 +213,7 @@ var twoText = document.getElementById("twotext");
 var twoHour = document.getElementById("twohour");
 
 renderTwoTask();
+twoHourColors();
 
 twobutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -190,6 +227,24 @@ function renderTwoTask() {
   twoText.innerText = localStorage.getItem("twotask");
 }
 
+function twoHourColors() {
+
+  if (hours == 14) {
+  $("#twotext").addClass("present");
+  }
+  
+  else if (hours < 14) {
+
+  $("#twotext").addClass("future");
+  
+  }
+    
+  else {
+  $("#twotext").addClass("past");
+  }
+  
+  }
+
 // 3 PM Stored Input - Render Input Stored
 
 var threebutton = document.getElementById("threebutton");
@@ -197,6 +252,7 @@ var threeText = document.getElementById("threetext");
 var threeHour = document.getElementById("threehour");
 
 renderThreeTask();
+threeHourColors();
 
 threebutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -210,6 +266,25 @@ function renderThreeTask() {
   threeText.innerText = localStorage.getItem("threetask");
 }
 
+function threeHourColors() {
+
+  if (hours == 15) {
+  $("#threetext").addClass("present");
+  }
+  
+  else if (hours < 15) {
+
+  $("#threetext").addClass("future");
+  
+  }
+    
+  else {
+  $("#threetext").addClass("past");
+  }
+  
+  }
+
+
 // 4 PM Stored Input - Render Input Stored
 
 var fourbutton = document.getElementById("fourbutton");
@@ -217,6 +292,7 @@ var fourText = document.getElementById("fourtext");
 var fourHour = document.getElementById("fourhour");
 
 renderFourTask();
+fourHourColors();
 
 fourbutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -231,12 +307,31 @@ function renderFourTask() {
 
 }
 
+function fourHourColors() {
+
+  if (hours == 15) {
+  $("#fourtext").addClass("present");
+  }
+  
+  else if (hours < 15) {
+
+  $("#fourtext").addClass("future");
+  
+  }
+    
+  else {
+  $("#fourtext").addClass("past");
+  }
+  
+  }
+
 // 5 PM Stored Input - Render Input Stored
 var fivebutton = document.getElementById("fivebutton");
 var fiveText = document.getElementById("fivetext");
 var fiveHour = document.getElementById("fivehour");
 
 fiveRenderTask();
+fiveHourColors();
 
 fivebutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -249,3 +344,21 @@ fivebutton.addEventListener("click", function (event) {
 function fiveRenderTask() {
   fiveText.innerText = localStorage.getItem("fivetask");
 }
+
+function fiveHourColors() {
+
+  if (hours == 16) {
+  $("#fivetext").addClass("present");
+  }
+  
+  else if (hours < 16) {
+
+  $("#fivetext").addClass("future");
+  
+  }
+    
+  else {
+  $("#fivetext").addClass("past");
+  }
+  
+  }

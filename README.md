@@ -20,12 +20,16 @@ WHEN I refresh the page
 THEN the saved events persist
 ```
 
-
+# How to use this calendar:
+This calendar will help you with daily tasks. Text/Task area will change colors depending on the time of the day.
+* Green Color = means upcoming tasks
+* Red Color = means current task (you must complepe!)
+* Gray Color = means past task (don't miss it!)
 
 # Mockup:
 
 ![Calendar](./images/calendar.png)
-
+![Calenar With Colors](./images/COLORS.png)
 
 
 # Resources:
@@ -35,12 +39,13 @@ THEN the saved events persist
 * Chrome, Safari, Firefox - to ensure page render correctly
 * Mozilla JavaScript
 * Boostrap
+* Moment API
 
 # Repository:
 
 * Repository: https://github.com/CivicaJR91/calendar
 * Page Link: https://civicajr91.github.io/calendar/
 
-# Note: 
-This is not completed. I could not figured out how to do the high score.
+
+
 

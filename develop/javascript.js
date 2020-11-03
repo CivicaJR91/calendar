@@ -4,7 +4,7 @@ var date = document.getElementById("currentDay");
 date.innerHTML = moment().format('MMMM Do, YYYY');
 
 
-var hours = moment().format('h:mm a');
+var hours = moment().format('h');
 console.log(hours);
 var time = document.querySelector(".daytime");
 var dailyTask = document.querySelector(".task");
@@ -18,7 +18,7 @@ var nineText = document.getElementById("ninetext");
 var ninehour = document.getElementById("ninehour");
 
 renderNineTask();
-nineHourColors();
+
 
 ninebutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -34,11 +34,22 @@ function renderNineTask() {
   nineText.innerText = localStorage.getItem("ninetask");
 }
 
+
+nineHourColors();
 function nineHourColors() {
-  if (hours > 9) {
-    $("#ninetext").addClass("past");
+
+  if (hours == 9) {
+    $("#ninetext").addClass("present");
+  }
+  else if (hours < 9) {
+    $("#ninetext").addClass("future");
 
   }
+  
+  else {
+    $("ninetext").addClass("past");
+  }
+
 }
 
 // 10 AM Stored Input - Render Input Stored
@@ -47,6 +58,7 @@ var tenText = document.getElementById("tentext");
 var tenhour = document.getElementById("tenhour");
 
 renderTenTask();
+tenHourColors();
 
 tenbutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -60,6 +72,23 @@ function renderTenTask() {
   tenText.innerText = localStorage.getItem("tentask");
 }
 
+
+function tenHourColors() {
+
+  if (hours == 10 ) {
+    $("#tentext").addClass("present");
+  }
+  else if (hours > 10) {
+  $("#tentext").removeClass("present future")
+  $("#tentext").addClass("past");
+  }
+  
+  else {
+  $("tentext").addClass("future");
+  }
+
+}
+
 // 11 AM Stored Input - Render Input Stored
 
 var elevenbutton = document.getElementById("elevenbutton");
@@ -67,6 +96,7 @@ var elevenText = document.getElementById("eleventext");
 var elevenhour = document.getElementById("elevenhour");
 
 renderElevenTask();
+elevenHourColors();
 
 elevenbutton.addEventListener("click", function (event) {
   event.preventDefault();
@@ -78,6 +108,26 @@ elevenbutton.addEventListener("click", function (event) {
 function renderElevenTask() {
 
   elevenText.innerText = localStorage.getItem("eleventask");
+}
+
+
+
+function elevenHourColors() {
+
+if (hours == 11) {
+$("#eleventext").addClass("present");
+}
+
+else if (hours < 11) {
+//$("#eleventext").removeClass("present future")
+$("#eleventext").addClass("future");
+
+}
+  
+else {
+$("eleventext").addClass("past");
+}
+
 }
 
 // 12 PM Stored Input - Render Input Stored

@@ -5,32 +5,197 @@ date.innerHTML = moment().format('MMMM Do, YYYY');
 
 
 var hours = moment().format('h:mm a');
+console.log(hours);
 var time = document.querySelector(".daytime");
 var dailyTask = document.querySelector(".task");
 var saveTaskButton = document.querySelector(".savebutton");
 var rowBlock = document.querySelector(".time-block")
 
 
-//LocalStorage
-// Store Tasks
+// 9 AM Stored Input - Render Input Stored
+var ninebutton = document.getElementById("ninebutton");
+var nineText = document.getElementById("ninetext");
+var ninehour = document.getElementById("ninehour");
 
+renderNineTask();
+nineHourColors();
 
-// adding eventlistener to the block that holds the time, text, and save button
-saveTaskButton.addEventListener("click", function (event) {
+ninebutton.addEventListener("click", function (event) {
   event.preventDefault();
 
-var nine= document.getElementById("nine");
-nine.value.trim();
-localStorage.setItem("task", JSON.stringify(""));
-
-renderTasks();
-
+  nineText.value.trim();
+  console.log(nineText.value);
+  localStorage.setItem("ninetask", nineText.value);
 });
 
-// 
-function renderTasks() {
 
-  JSON.parse(localStorage.getItem("task"));
+function renderNineTask() {
+
+  nineText.innerText = localStorage.getItem("ninetask");
 }
 
+function nineHourColors() {
+  if (hours > 9) {
+    $("#ninetext").addClass("past");
 
+  }
+}
+
+// 10 AM Stored Input - Render Input Stored
+var tenbutton = document.getElementById("tenbutton");
+var tenText = document.getElementById("tentext");
+var tenhour = document.getElementById("tenhour");
+
+renderTenTask();
+
+tenbutton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  tenText.value.trim();
+  localStorage.setItem("tentask", tenText.value);
+});
+
+function renderTenTask() {
+
+  tenText.innerText = localStorage.getItem("tentask");
+}
+
+// 11 AM Stored Input - Render Input Stored
+
+var elevenbutton = document.getElementById("elevenbutton");
+var elevenText = document.getElementById("eleventext");
+var elevenhour = document.getElementById("elevenhour");
+
+renderElevenTask();
+
+elevenbutton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  elevenText.value.trim();
+  localStorage.setItem("eleventask", elevenText.value);
+});
+
+function renderElevenTask() {
+
+  elevenText.innerText = localStorage.getItem("eleventask");
+}
+
+// 12 PM Stored Input - Render Input Stored
+var twelvebutton = document.getElementById("twelvebutton");
+var twelveText = document.getElementById("twelvetext");
+var twelveHour = document.getElementById("twelvehour");
+
+renderTwelveTask();
+
+twelvebutton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  twelveText.value.trim();
+  localStorage.setItem("twelvetask", twelveText.value);
+
+})
+
+function renderTwelveTask() {
+  twelveText.innerText = localStorage.getItem("twelvetask");
+
+}
+
+// 1 PM Stored Input - Render Input Stored
+
+var onebutton = document.getElementById("onebutton");
+var oneText = document.getElementById("onetext");
+var oneHour = document.getElementById("onehour");
+
+renderOneTask();
+
+onebutton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  oneText.value.trim();
+  localStorage.setItem("onetask", oneText.value);
+
+})
+
+function renderOneTask() {
+  oneText.innerText = localStorage.getItem("onetask");
+}
+
+// 2 PM Stored Input - Render Input Stored
+
+var twobutton = document.getElementById("twobutton");
+var twoText = document.getElementById("twotext");
+var twoHour = document.getElementById("twohour");
+
+renderTwoTask();
+
+twobutton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  twoText.value.trim();
+  localStorage.setItem("twotask", twoText.value);
+
+})
+
+function renderTwoTask() {
+  twoText.innerText = localStorage.getItem("twotask");
+}
+
+// 3 PM Stored Input - Render Input Stored
+
+var threebutton = document.getElementById("threebutton");
+var threeText = document.getElementById("threetext");
+var threeHour = document.getElementById("threehour");
+
+renderThreeTask();
+
+threebutton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  threeText.value.trim();
+  localStorage.setItem("threetask", threeText.value);
+
+})
+
+function renderThreeTask() {
+  threeText.innerText = localStorage.getItem("threetask");
+}
+
+// 4 PM Stored Input - Render Input Stored
+
+var fourbutton = document.getElementById("fourbutton");
+var fourText = document.getElementById("fourtext");
+var fourHour = document.getElementById("fourhour");
+
+renderFourTask();
+
+fourbutton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  fourText.value.trim();
+  localStorage.setItem("fourtask", fourText.value);
+
+})
+
+function renderFourTask() {
+  fourText.innerText = localStorage.getItem("fourtask");
+
+}
+
+// 5 PM Stored Input - Render Input Stored
+var fivebutton = document.getElementById("fivebutton");
+var fiveText = document.getElementById("fivetext");
+var fiveHour = document.getElementById("fivehour");
+
+fiveRenderTask();
+
+fivebutton.addEventListener("click", function (event) {
+  event.preventDefault();
+
+  fiveText.value.trim();
+  localStorage.setItem("fivetask", fiveText.value);
+
+})
+
+function fiveRenderTask() {
+  fiveText.innerText = localStorage.getItem("fivetask");
+}

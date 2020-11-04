@@ -309,11 +309,11 @@ function renderFourTask() {
 
 function fourHourColors() {
 
-  if (hours == 15) {
+  if (hours == 16) {
   $("#fourtext").addClass("present");
   }
   
-  else if (hours < 15) {
+  else if (hours < 16) {
 
   $("#fourtext").addClass("future");
   
@@ -347,11 +347,11 @@ function fiveRenderTask() {
 
 function fiveHourColors() {
 
-  if (hours == 16) {
+  if (hours == 17) {
   $("#fivetext").addClass("present");
   }
   
-  else if (hours < 16) {
+  else if (hours < 17) {
 
   $("#fivetext").addClass("future");
   
